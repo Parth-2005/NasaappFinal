@@ -1,0 +1,48 @@
+{% extends 'layout.html' %}
+
+{% block css %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/login.css') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/signup.css') }}">
+{% endblock css %}
+{% block body %}
+    
+<!--Sign up-->
+<div class="form-container">
+<div class="sign-up">
+<form action="/signup" method="post" class="personal-data">
+    <h2 align="center">Personal Data</h2><hr>
+    <label for="username"></label><br>
+    <input required type="text" id="username" name="username" placeholder="Username"><br>
+    <br>
+    <div class="name-container">
+        <input required class="usrinp" type="text" id="fname" name="fname" placeholder="First Name">
+        <input required class="usrinp" type="text" id="lname" name="lname" placeholder="Last name"><br>
+    </div> 
+    <label for="email"></label><br>
+    <input required class="usrinp" type="email" id="email" name="email" placeholder="Email"><br>
+    <br>
+    <label for="bday">BirthYear:</label>
+    <input required class="usrinp" type="number" id="bday" placeholder="2000" name="byear"><br>
+    <label for="password">Password</label><br>
+    <input class="usrinp" type="password" id="pass" name="pass" placeholder="Password"><br>
+    <br>
+    <button type="submit" class="login">Submit</button>
+</div>      
+</form><br>
+<!--Next button-->
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.0.1/socket.io.js" integrity="sha512-q/dWJ3kcmjBLU4Qc47E4A9kTB4m3wuTY7vkFJDTZKjTs8jhyGQnaUrxa0Ytd0ssMZhbNua9hE+E7Qv1j+DyZwA==" crossorigin="anonymous"></script>
+<script type="text/javascript" charset="utf-8">
+    var socket = io();
+    document.getElementById("username").addEventListener("input", ()=>{
+        socket.emit("check_usrname", {username: document.getElementById("username").value})
+    })
+    socket.on('username_not_available', function() {
+        document.getElementById("username").style.borderColor="rgb(255, 81, 81)"
+    });
+    socket.on('username_available', function() {
+        document.getElementById("username").style.borderColor="#4CAF50"
+    });
+</script>
+{% endblock body %}

@@ -1,0 +1,66 @@
+.personal-data{
+    color: white;
+}
+/* Style for form elements */
+.form-container{
+    width: 50%; /* Adjust the width as needed */
+    margin-left: auto; /* Pushes the form to the right */
+    float: right; /* Floats the form to the right */
+    padding-right: 50px;
+    padding-top: 50px;
+    max-width: 500px;
+}
+.personal-data input[type="text"],
+.personal-data input[type="email"],
+.personal-data input[type="date"] {
+    border: 1px solid #ccc; /* Add border */
+    border-radius: 10px; /* Add border-radius for rounded corners */
+    padding: 10px; /* Add padding */
+    margin-bottom: 10px; /* Add margin bottom */
+    width: 100%; /* Set width to 100% */
+    box-sizing: border-box; /* Include padding and border in element's total width and height */
+    background-color: transparent; /* Set background color to transparent */
+}
+
+/* Style for placeholders */
+.personal-data input[type="text"]::placeholder,
+.personal-data input[type="email"]::placeholder,
+.personal-data input[type="date"]::placeholder {
+    color: #ccc; /* Set placeholder text color */
+    text-decoration: #ccc;
+}
+.personal-data input[type="number"] {
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    padding: 10px;
+    margin-bottom: 10px;
+    width: 100%;
+    box-sizing: border-box;
+    background-color: transparent;
+    color: white; /* Add this line to set the text color to white */
+}
+
+/* Add this CSS rule to style the date picker dropdown */
+.personal-data input[type="date"]::-webkit-calendar-picker-indicator {
+    filter: invert(1); /* Invert the color of the date picker icon */
+}
+
+
+/* Remove default border and outline styles for input elements */
+.usrinp{
+    outline: none;
+    border-color: #4CAF50; /* Add focus border color */
+}
+
+
+.name-container {
+    display: flex;
+    justify-content: space-between;
+}
+.name-container input[type="text"]:first-child {
+    margin-right: 40px;
+}
+/* .next-button{
+    background-color: yellow;
+    width: 100px;
+} */

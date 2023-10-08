@@ -1,0 +1,102 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+/* body{
+    background-image: url("../images/background.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+     margin: 0;
+     padding: 0;
+ } */
+ .signup{
+     border-color: white;
+     border-radius: 30px;    
+     width: auto;
+     height: auto;
+     padding: 5px;
+     border-style: solid;
+ }
+ 
+ 
+ .navbar {
+     font-family: 'Courier New', Courier, monospace;
+     display: flex;
+     justify-content: space-between;
+     align-items: center;
+     padding: 10px 20px;
+     background-color: #5C469C;
+     color: white;
+     height: 7vh;
+ }
+ 
+ 
+ .logo {
+     width: 70px; /* Adjust the width as needed */
+     height: 70px;
+     padding: 0;
+ }
+ 
+ .spacer {
+     flex: 1;
+ }
+ 
+ .nav-links, .logo-container {
+     display: flex;
+     gap: 20px; /* Adjust the space between nav-links items as needed */
+ 
+ }
+ .nav-links h4:hover {
+     cursor: pointer;
+     color: black; /* Change the text color on hover */
+ }
+ 
+ .nav-links h4 a{
+     text-decoration: none white;
+     color: white;
+ }
+.searchBox {
+      display: flex;
+      max-width: 40rem;
+      width: 30rem;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+      background: white;
+      border-radius: 50px;
+      position: relative;
+    }
+    
+    .searchButton {
+      color: black;
+      position: absolute;
+      right: 8px;
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      background: var(--gradient-2, linear-gradient(90deg, #D4ADFC 0%, #1D267D 100%));
+      border: 0;
+      display: inline-block;
+      transition: all 300ms cubic-bezier(.23, 1, 0.32, 1);
+    }
+    /*hover effect*/
+    button:hover {
+      color: #fff;
+      background-color: #1A1A1A;
+      box-shadow: rgba(0, 0, 0, 0.5) 0 10px 20px;
+      transform: translateY(-3px);
+    }
+    /*button pressing effect*/
+    button:active {
+      box-shadow: none;
+      transform: translateY(0);
+    }
+    
+    .searchInput {
+      border: none;
+      background: none;
+      outline: none;
+      color: black;
+      font-size: 15px;
+      padding: 24px 46px 24px 26px;
+    }

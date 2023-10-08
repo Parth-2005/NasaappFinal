@@ -1,0 +1,43 @@
+{% extends 'layout0.html' %}
+{% block css %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/profile.css') }}">
+{% endblock css %}
+
+{% block body %}
+<form action="/profile/edit" method="post">
+    <div class="profile-container">
+        <div class="profile-header">
+            <img src="{{ url_for('static', filename='images/user.png') }}" alt="Profile Picture">
+        <div class="profile-name">
+            <h1>{{ user.username }}</h1>
+            <input class="usrinp" type="text" name="bio" id="bio">
+        </div>
+    </div>
+    <hr>
+    <div class="section">
+        <div class="edu_qual">
+            <h2>Educational Qualification:</h2>
+            <input type="text" name="edu_qual" class="usrinp">
+        </div>
+    </div>
+    <hr>
+    <div class="section">
+        <div class="edu_qual">
+            <h2>Skills:</h2>
+            <div class="dropdownList">
+                <input class="usrinp" type="text" name="skill" id="skill">
+            </div>
+        </div>
+    </div>
+    <hr>
+    <button id="frm-btn" type="submit">Update</button>
+</form>
+    <div class="section">
+        <div class="edu_qual">
+            <h2>Contact Details:</h2>
+            <span>Email: <a href="mailto:{{ user.email }}">{{ user.email }}</a></span>
+        </div>
+    </div>
+    <hr>
+    <script src="scripts.js"></script>
+    {% endblock body %}

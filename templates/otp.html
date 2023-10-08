@@ -1,0 +1,31 @@
+{% extends 'layout.html' %}
+{% block css %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/otp.css') }}">
+{% endblock %}
+
+{% block body %}
+    
+<!--Login-->
+<div class="form-container">
+    <form class="form" method="post" action="/otp">
+        <span class="close">X</span>
+  
+        <div class="info">
+            <span class="title">OTP Verification</span>
+  <p class="description">Please enter the code we have sent you. </p>
+</div>
+<div class="inputs">
+    <input name="0" type="tel" maxlength="1">
+    <input name="1" type="tel" maxlength="1">
+    <input name="2" type="tel" maxlength="1">
+    <input name="3" type="tel" maxlength="1">
+    <input name="4" type="tel" maxlength="1">
+    <input name="5" type="tel" maxlength="1">
+</div>
+<button class="validate" type="submit">Verify</button>
+<p class="resend">You don't receive the code ?<a href="/otp" class="resend-action">resend</a></p>
+
+</form>
+</div>
+    
+{% endblock body %}
